@@ -1,0 +1,13 @@
+a {
+    color: #286464;
+    text-decoration: none;
+    background-color: transparent;
+    transition: 1ms linear;
+}
+a:hover {
+    color: #19291e9f;
+    text-decoration: underline;
+}
+.vh-85{
+    height: 85vh ;
+}
