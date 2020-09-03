@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ozitag/static/css/main.28a8469b.chunk.css",
+    "main.js": "/ozitag/static/js/main.7b6e257a.chunk.js",
+    "main.js.map": "/ozitag/static/js/main.7b6e257a.chunk.js.map",
+    "runtime-main.js": "/ozitag/static/js/runtime-main.33541cdc.js",
+    "runtime-main.js.map": "/ozitag/static/js/runtime-main.33541cdc.js.map",
+    "static/js/2.091dea73.chunk.js": "/ozitag/static/js/2.091dea73.chunk.js",
+    "static/js/2.091dea73.chunk.js.map": "/ozitag/static/js/2.091dea73.chunk.js.map",
+    "index.html": "/ozitag/index.html",
+    "precache-manifest.60be9aeac9c0e4af1e20891ed95cacce.js": "/ozitag/precache-manifest.60be9aeac9c0e4af1e20891ed95cacce.js",
+    "service-worker.js": "/ozitag/service-worker.js",
+    "static/css/main.28a8469b.chunk.css.map": "/ozitag/static/css/main.28a8469b.chunk.css.map",
+    "static/js/2.091dea73.chunk.js.LICENSE.txt": "/ozitag/static/js/2.091dea73.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.33541cdc.js",
+    "static/js/2.091dea73.chunk.js",
+    "static/css/main.28a8469b.chunk.css",
+    "static/js/main.7b6e257a.chunk.js"
+  ]
+}
