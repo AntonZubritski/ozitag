@@ -1,3 +1,2 @@
-import App from './app'
-
+import App from './app.jsx'
 export default App

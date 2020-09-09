@@ -1,7 +1,7 @@
 import {
-  TOGLE_MENU,
+  TOGGLE_MENU,
   SWITCH_FALSE_NAV,
-  TOGLE_UNDER_MENU,
+  TOGGLE_UNDER_MENU,
   SWITCH_FALSE_UNDER_NAV,
 } from './constants'
 
@@ -26,11 +26,11 @@ export const OpenUnderMenu = (item, menuId) => {
   }
 }
 export const UpdateNav = (body) => ({
-  type: TOGLE_MENU,
+  type: TOGGLE_MENU,
   body,
 })
 export const UpdateUnderNav = (body, id) => ({
-  type: TOGLE_UNDER_MENU,
+  type: TOGGLE_UNDER_MENU,
   body,
   id,
 })

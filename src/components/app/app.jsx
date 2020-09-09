@@ -1,7 +1,7 @@
 import React from 'react'
-import './app.css'
 import Header from '../header'
 import Content from '../content'
+import './app.css'
 
 const App = () => {
   return (

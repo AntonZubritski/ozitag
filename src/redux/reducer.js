@@ -3,14 +3,14 @@ import initialStateNav from './initialState'
 
 const navReducer = (state = initialStateNav, action) => {
   switch (action.type) {
-    case constants.TOGLE_MENU:
+    case constants.TOGGLE_MENU:
       return {
         ...state,
         navItem: state.navItem.map((el) =>
           el.id === action.body.id ? action.body : el
         ),
       }
-    case constants.TOGLE_UNDER_MENU:
+    case constants.TOGGLE_UNDER_MENU:
       return {
         ...state,
         navItem: state.navItem.map((el) =>
@@ -43,4 +43,4 @@ const navReducer = (state = initialStateNav, action) => {
   }
 }
 
-export { navReducer }
+export default navReducer 

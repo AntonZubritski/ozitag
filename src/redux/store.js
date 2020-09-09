@@ -1,16 +1,7 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux'
-import { navReducer } from './reducer'
+import { createStore, applyMiddleware } from 'redux'
+import navReducer from './reducer'
 import thunk from 'redux-thunk'
 
-const reducers = combineReducers({
-  navInfo: navReducer,
-})
-
-const store = createStore(reducers, applyMiddleware(thunk))
-
-const update = () => {
-  console.log(store.getState())
-}
-store.subscribe(update)
+const store = createStore(navReducer, applyMiddleware(thunk))
 
 export default store

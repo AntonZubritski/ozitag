@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { connect } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import './header.css'
 import {
   Button,
@@ -13,9 +13,9 @@ import {
 } from 'react-bootstrap'
 import * as actions from '../../redux/actions'
 
-const Header = (props) => {
-  const { navItem } = props
-  const { OpenMenu, OpenUnderMenu, FalseNav, FalseUnderNav } = props
+const Header = () => {
+  const navItem = useSelector((state) => state.navItem)
+  const dispatch = useDispatch()
 
   const buttGroup = navItem.map((item, key) => {
     const { title, active } = item
@@ -25,7 +25,7 @@ const Header = (props) => {
           <Button
             active={active}
             className="btn-style"
-            onClick={() => OpenMenu(item)}
+            onClick={() => dispatch(actions.OpenMenu(item))}
             aria-controls="menu"
           >
             {title}
@@ -40,7 +40,9 @@ const Header = (props) => {
 
                   <Button
                     className="btn-style"
-                    onClick={() => OpenUnderMenu(title, item.id)}
+                    onClick={() =>
+                      dispatch(actions.OpenUnderMenu(title, item.id))
+                    }
                     aria-controls="example-collapse-text"
                     aria-expanded={title.activeUnderMenu}
                   >
@@ -55,7 +57,7 @@ const Header = (props) => {
                           <ListGroup.Item className="text-left" key={key}>
                             <a
                               href={`#${item.section}`}
-                              onClick={() => FalseUnderNav()}
+                              onClick={() => dispatch(actions.FalseUnderNav())}
                             >
                               {li}
                             </a>
@@ -83,26 +85,13 @@ const Header = (props) => {
       </Navbar>
 
       <Navbar bg="light" expand="lg" className="sticky-top">
-        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={FalseNav} />
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          onClick={() => dispatch(actions.FalseNav())}
+        />
         <Navbar.Collapse id="basic-navbar-nav">{buttGroup}</Navbar.Collapse>
       </Navbar>
     </>
   )
 }
-const mapStateToProps = (state) => {
-  return {
-    navItem: state.navInfo.navItem,
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    OpenMenu: (item) => dispatch(actions.OpenMenu(item)),
-    OpenUnderMenu: (item, menuId) =>
-      dispatch(actions.OpenUnderMenu(item, menuId)),
-    FalseNav: () => dispatch(actions.FalseNav()),
-    FalseUnderNav: () => dispatch(actions.FalseUnderNav()),
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default Header
